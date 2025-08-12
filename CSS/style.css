@@ -269,6 +269,21 @@ html{
     margin-top: 1rem;
     }
 
+    nav a {
+    color: #fff;
+    margin-left: 1rex;
+    text-decoration: none;
+    font-weight: 800;
+    transition:all;
+    transition-duration: 300ms;
+    transition-delay: 2ms;
+    transition-timing-function: linear;
+    }
+
+    nav a:hover {
+    text-decoration: underline;
+    color: rgb(119, 108, 58);
+    }
     .services-list {
     flex-direction: row;
 
