@@ -258,6 +258,65 @@ html{
     color: rgba(0, 128, 0,0.8);
     font-size: 1.1rem;
 }
+.services-list a{
+    margin-top: 2rem;
+    margin-left: 40%;
+    
+}
+
+/* Projects Page */
+#projects {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  background: rgb(245, 236, 223);
+  text-align: center;
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border: 2px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: solid 1px black;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+#title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
+@media (max-width: 900px) {
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+  #title {
+    padding-left: 0;
+  }
+}
+
+
 
 @media (max-width: 600px) {
     header {
@@ -331,5 +390,12 @@ html{
     .button:hover {
     background: #333;
     scale: 1.05;
+    }
+
+    .services-list a{
+        margin: 0;
+        margin-top: 1rem;
+        margin-bottom: -2rem;
+    
     }
 }
