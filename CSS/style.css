@@ -10,37 +10,81 @@ body {
     color: #222;
     line-height: 1.6;
 }
+/* Top Navigation */
+.topnav {
+  background: rgb(4, 4, 39);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* anchor for absolute nav */
+  z-index: 1000;
+}
 
-header {
-    background: rgb(4, 4, 39);
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navigation {
+  display: flex;
+  gap: 1rem;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-nav a {
-    color: #fff;
-    margin-left: 1rem;
-    text-decoration: none;
-    font-weight: 800;
-    transition:all;
-    transition-duration: 300ms;
-    transition-delay: 2ms;
-    transition-timing-function: linear;
+.nav-items {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 800;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-    text-decoration: underline;
-    color: rgb(119, 108, 58);
+.nav-items:hover {
+  text-decoration: underline;
+  color: rgb(119, 108, 58);
 }
+
+.icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 700px) {
+  .navigation {
+    flex-direction: column;
+    background-color: rgb(4, 4, 39);
+    position: absolute;
+    top: 100%; /* just below header */
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 0;
+
+    /* Hidden by default */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .navigation.show {
+    max-height: 500px;
+    transition: max-height 0.3s ease-in;
+  }
+
+  .navigation a {
+    text-align: left;
+    padding: 10px 16px;
+  }
+
+  .icon {
+    display: block;
+  }
+}
+
 
 section {
     padding: 4rem 2rem;
@@ -319,30 +363,7 @@ html{
 
 
 @media (max-width: 600px) {
-    header {
-    flex-direction: column;
-    align-items: flex-start;
-    }
-
-    nav {
-    margin-top: 1rem;
-    }
-
-    nav a {
-    color: #fff;
-    margin-left: 1rex;
-    text-decoration: none;
-    font-weight: 800;
-    transition:all;
-    transition-duration: 300ms;
-    transition-delay: 2ms;
-    transition-timing-function: linear;
-    }
-
-    nav a:hover {
-    text-decoration: underline;
-    color: rgb(119, 108, 58);
-    }
+    
     .services-list {
     flex-direction: row;
 

@@ -27,14 +27,24 @@
 <body>
   <a id="top"></a>
   <header>
-    <div class="logo">Mtalika<span class="x" style="font-size: 2cap; font-weight: 800; color:rgb(11, 230, 219); font-size: xx-large;">X</span></div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+    <div class="topnav">
+      <div class="logo">
+        Mtalika<span class="x" style="font-weight: 800; color:rgb(11, 230, 219); font-size: xx-large;">X</span>
+      </div>
+
+      <nav class="navigation" id="myLinks">
+        <a href="index.html" class="nav-items">Home</a>
+        <a href="index.html#about" class="nav-items">About</a>
+        <a href="index.html#services" class="nav-items">Services</a>
+        <a href="index.html#contact" class="nav-items">Contact</a>
+        <a href="projects.html" class="nav-items">Projects</a>
+      </nav>
+
+      <!-- Hamburger -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars" id="menu-icon"></i>
+      </a>
+    </div>
   </header>
 
   <main>
@@ -68,5 +78,6 @@
     </a>
     © 2025 MtalikaX. Built with 💻 HTML + CSS.
   </footer>
+  <script src="SCRIPT/script.js"></script>
 </body>
 </html>
