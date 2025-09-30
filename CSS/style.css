@@ -1,3 +1,45 @@
+:root{
+    --nav-back-colour:rgb(4, 4, 39);
+    --nav-text-color: white;
+    --body-background:#e7ebf0;
+    --text-primary-color:#222;
+    --section-background-color:#ffffff;
+    --section-border-color:rgb(200, 198, 207);
+    --section-background-color-HOVER:rgb(245, 236, 223);
+    --section-border-color-HOVER:black;
+    --service-background:#f0f0f0;
+    --section-button-background-color:#111;
+    --scrow-arrow-background-color:rgba(0, 0, 0,0.5);
+    --scrow-arrow-text:white;
+    --distinct-color:crimson;
+    --section-H2-underline:rgb(15, 13, 1);
+    --projects-setion-color:rgb(245, 236, 223);
+    --project-border-color:#eee;
+    --theme-switch-color:black;
+    --theme-switch-background-color:white;
+}
+
+.darkmode{
+    --nav-back-colour:rgb(4, 4, 39);
+    --nav-text-color: white;
+    --body-background:#01070e;
+    --text-primary-color:white;
+    --section-background-color:#111;
+    --section-border-color:rgb(2, 2, 2);
+    --section-background-color-HOVER:#111;
+    --section-border-color-HOVER:black;
+    --service-background:#1a1b1a;
+    --section-button-background-color:black;
+    --scrow-arrow-background-color:white;
+    --scrow-arrow-text:black;
+    --distinct-color:rgb(255, 145, 0);
+    --section-H2-underline:rgb(255, 145, 0);
+    --projects-setion-color:#111;
+    --project-border-color:#3a3434;
+    --theme-switch-color:white;
+    --theme-switch-background-color:black;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +48,58 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #e7ebf0;
-    color: #222;
+    background-color: var(--body-background);
+    color: var(--text-primary-color);
     line-height: 1.6;
 }
+
+#theme-switch{
+    height:50px;
+    width:50px;
+    padding:0;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border: 2px solid var(--theme-switch-color);
+    background-color:var(--theme-switch-background-color-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 7rem;
+    right:2rem;
+    z-index: 200;
+}
+#theme-switch svg{
+    fill:var(--theme-switch-color);
+}
+/* appear one icon on each theme */
+#theme-switch svg:last-child{
+    display: none;
+}
+.darkmode #theme-switch svg:first-child{
+    display:none;
+}
+.darkmode #theme-switch svg:last-child{
+    display:block;
+}
+
+@media (max-width: 700px) {
+    #theme-switch{
+        right:5rem;
+        top:1rem;
+        z-index:2000;
+        position:absolute;
+        border: none;
+    }
+    #theme-switch svg{
+        fill:white;
+    }
+}
+
 /* Top Navigation */
 .topnav {
-  background: rgb(4, 4, 39);
-  color: #fff;
+  background: var(--nav-back-colour);
+  color: var(--nav-text-color);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -34,7 +120,7 @@ body {
 }
 
 .nav-items {
-  color: #fff;
+  color: var(--nav-text-color);
   margin-left: 1rem;
   text-decoration: none;
   font-weight: 800;
@@ -49,7 +135,7 @@ body {
 .icon {
   display: none;
   font-size: 24px;
-  color: white;
+  color: var(--nav-text-color);
   cursor: pointer;
 }
 
@@ -57,7 +143,7 @@ body {
 @media (max-width: 700px) {
   .navigation {
     flex-direction: column;
-    background-color: rgb(4, 4, 39);
+    background-color: var(--nav-back-colour);
     position: absolute;
     top: 100%; /* just below header */
     left: 0;
@@ -68,6 +154,10 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+  }
+
+  .icon{
+    z-index:2000;
   }
 
   .navigation.show {
@@ -122,7 +212,7 @@ section {
 }
 .inner-txt span{
     position:relative;
-    color: crimson;
+    color: var(--distinct-color);
     animation: animation 10s linear infinite;
 }
 @keyframes animation{
@@ -166,18 +256,20 @@ section {
     transition-delay: 2ms;
     transition-timing-function: linear;
 }
-
-.button:hover {
+#section-button{
+    background:var(--section-button-background-color);
+}
+.button:hover, #section-button:hover {
     background: #333;
     scale: 1.05;
 }
 
 #about, #services, #contact{
-    background: #fff;
+    background: var(--section-background-color);
     border-radius: 6px;
     margin-bottom: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    border: rgb(200, 198, 207)  solid ;
+    border: var(--section-border-color)  solid ;
     transition:all;
     transition-duration: 300ms;
     transition-delay: 5ms;
@@ -190,8 +282,8 @@ section {
     border-radius: 6px;
     margin-bottom: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    border: black solid;
-    background: rgb(245, 236, 223);
+    border: var(--section-border-color-HOVER) solid;
+    background: var(--section-background-color-HOVER);
     scale: 1.02;
 }
 
@@ -212,7 +304,7 @@ h2::after {
     bottom: -5px;
     height: 3px;
     width: 100%;
-    background-color: rgb(15, 13, 1); 
+    background-color: var(--section-H2-underline); 
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 500ms 2ms ease-in-out;
@@ -234,7 +326,7 @@ h2::after {
 .service {
     flex: 1 1 250px;
     padding: 1rem;
-    background: #f0f0f0;
+    background: var(--service-background);
     border-radius: 5px;
 }
 footer {
@@ -245,7 +337,7 @@ footer {
 }
 
 .scroll-arrow{
-    background: rgba(0, 0, 0,0.5);
+    background: var(--scrow-arrow-background-color);
     width: 36px;
     height: 36px;
     position: fixed;
@@ -261,7 +353,7 @@ footer {
 }
 .scroll-arrow:hover{
     scale: 1.2;
-    background: rgba(0, 0, 0,0.5);
+    background: var(--scrow-arrow-background-color);
     width: 36px;
     height: 36px;
     position: fixed;
@@ -272,7 +364,7 @@ footer {
     z-index: 9;
 }
 .scroll-txt{
-    color: white;
+    color: var(--scrow-arrow-text);
     position: fixed;
     bottom: 1.25rem;
     right: 1.563rem;
@@ -284,7 +376,7 @@ html{
 }
 /* contacts and icons */
 #email{
-    color: rgb(190, 14, 37);
+    color: var(--distinct-color);
 }
 .conatct-icons{
     margin-bottom: 0.5rem;
@@ -313,7 +405,7 @@ html{
   padding: 4rem 2rem;
   max-width: 1200px;
   margin: auto;
-  background: rgb(245, 236, 223);
+  background: var(--projects-setion-color);
   text-align: center;
 }
 
@@ -325,18 +417,22 @@ html{
 }
 
 .project {
-  background: white;
+  background: var(--service-background);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 1.5rem;
-  border: 2px solid #eee;
+  border: 2px solid var(--project-border-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border: solid 1px black;
+  border: solid 1px var(--project-border-color);
+}
+
+.project .button{
+    margin-top: 0.5rem;
 }
 
 .project img {
@@ -373,8 +469,8 @@ html{
     border-radius: 6px;
     margin-bottom: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    border: black solid;
-    background: rgb(245, 236, 223);
+    border: var(--section-border-color-HOVER) solid;
+    background: var(--section-background-color-HOVER);
     }
 
     .fa-regular.fa-envelope{
