@@ -10,7 +10,6 @@
     --service-background:#f0f0f0;
     --section-button-background-color:#111;
     --scrow-arrow-background-color:rgba(0, 0, 0,0.5);
-    --scrow-arrow-text:white;
     --distinct-color:crimson;
     --section-H2-underline:rgb(15, 13, 1);
     --projects-setion-color:rgb(245, 236, 223);
@@ -30,8 +29,7 @@
     --section-border-color-HOVER:black;
     --service-background:#1a1b1a;
     --section-button-background-color:black;
-    --scrow-arrow-background-color:white;
-    --scrow-arrow-text:black;
+    --scrow-arrow-background-color:rgba(116, 113, 139, 0.5);
     --distinct-color:rgb(255, 145, 0);
     --section-H2-underline:rgb(255, 145, 0);
     --projects-setion-color:#111;
