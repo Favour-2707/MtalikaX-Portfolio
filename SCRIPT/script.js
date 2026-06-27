@@ -28,6 +28,28 @@ document.querySelectorAll("#myLinks a").forEach(link => {
   });
 });
 
+// Close menu when clicking outside (mobile only)
+document.addEventListener("click", function(event){
+
+  var nav = document.getElementById("myLinks");
+  var hamburger = document.querySelector(".icon");
+  var icon = document.getElementById("menu-icon");
+
+  if(
+    !nav.contains(event.target) &&
+    !hamburger.contains(event.target)
+  ){
+
+    // Close menu
+    nav.classList.remove("show");
+
+    // Reset icon back to hamburger
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+  }
+
+});
+
 
 // Darkmode lightmode theme
 let darkmode = localStorage.getItem('darkmode')
